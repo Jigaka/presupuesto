@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es-PY">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajos</title>
+    <meta name="description" content="Web para calcular presupuesto para hacer trabajos practicos">
+    <meta name="theme-color" content="#111927">
+    <meta property="og:title" content="Karen Trabajos Practicos">
+    <meta property="og:description" content="Calcula tu presupuesto con Karen">
+    <meta property="og:image" content="https://">
+    <meta property="og:url" content="https://tu-dominio.com/">
+    <meta name="twitter:card" content="sumary">
+    <meta name="twitter:site" content="@jigaka">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <article class="article">
+            <header class="header">
+                <h1 class="title">Calcula tu presupuesto</h1>
+            </header>
+            <form class="presupuesto-form">
+                <label class="label">
+                    Cantidad de hojas:
+                </label>
+                <input class="hojas" min="1" type="number" name="hojas" placeholder="Ejemplo: 1" title="Debe elegir una materia" required>
+                <label class="label">
+                    Materia
+                </label>
+                <select class="materia" name="materia" title="Debe elegir una materia" required >
+                    <option value="">Elije una opcion</option>
+                    <option value="Matematica">Matematica</option>
+                    <option value="Castellano">Castellano</option>
+                    <option value="Fisica">Fisica</option>
+                    <option value="Quimica">Quimica</option>
+                    <option value="Ciencias">Ciencias</option>
+                </select>
+                <input id="calcular" type="submit" value="Calcular">
+            </form>
+            <div class="total">
+                <h2>total: <span class="total-span"></span></h2>
+            </div>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
