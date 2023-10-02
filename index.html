@@ -1,53 +1,99 @@
 <!DOCTYPE html>
-<html lang="es-PY">
-<head>
+<html lang="en-PY">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabajos</title>
-    <meta name="description" content="Web para calcular presupuesto para hacer trabajos practicos">
-    <meta name="theme-color" content="#111927">
-    <meta property="og:site_name" content="Karen Trabajos Practicos">
-    <meta property="og:type" content="website" />
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="300">
-    <meta property="og:image:height" content="300">
-    <meta property="og:title" content="Karen Trabajos Practicos">
-    <meta property="og:description" content="Calcula tu presupuesto con Karen">
-    <meta property="og:image" content="https://github.com/Jigaka/presupuesto/blob/master/asstes/logo.PNG">
-    <meta property="og:url" content="https://github.com/Jigaka/presupuesto">
-    <meta name="twitter:card" content="sumary">
-    <meta name="twitter:site" content="@jigaka">
+    <link rel="stylesheet" type="text/css" href="font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Calculador de presupuestos</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  </head>
+  <body>
+
+    <header>
+      <h1>Calcula tu presupuesto</h1>
+    </header>
+
     <main>
-        <article class="article">
-            <header class="header">
-                <h1 class="title">Calcula tu presupuesto</h1>
-            </header>
-            <form class="presupuesto-form">
-                <label class="label">
-                    Cantidad de hojas:
-                </label>
-                <input class="hojas" min="1" type="number" name="hojas" placeholder="Ejemplo: 1" title="Debe elegir una materia" required>
-                <label class="label">
-                    Materia
-                </label>
-                <select class="materia" name="materia" title="Debe elegir una materia" required >
-                    <option value="">Elije una opcion</option>
-                    <option value="Matematica">Matematica</option>
-                    <option value="Castellano">Castellano</option>
-                    <option value="Fisica">Fisica</option>
-                    <option value="Quimica">Quimica</option>
-                    <option value="Ciencias">Ciencias</option>
-                </select>
-                <input id="calcular" type="submit" value="Calcular">
-            </form>
-            <div class="total">
-                <h2>total: <span class="total-span"></span></h2>
-            </div>
-        </article>
+      <form id="calculador-form" class="calculador-form">
+        <section id="step1">
+          <h2>Tipo de trabajo</h2>
+          <select id="tipo-trabajo" required   data-step="1" name="tipo-trabajo">
+            <option value="">Elije una opcion...</option>
+            <option value="monografia">Monografía</option>
+            <option value="presentacion">Presentación</option>
+            <option value="documento">Documento</option>
+          </select>
+        </section>
+
+        <section id="step2" class="hidden">
+          <h2>Categoría</h2>
+          <select id="categoria" required   data-step="2" name="categoria">
+            <option value="">Elije una opcion...</option>
+            <option value="trabajo-practico">Trabajo Practico</option>
+            <option value="cientifico">Científica</option>
+          </select>
+        </section>
+
+        <section id="step3" class="hidden">
+          <h2>Cantidad Hojas</h2>
+          <input value="" min="1" type="number" name="hojas" placeholder="Ejemplo: 1"  required   data-step="3">
+        </section>
+
+        <section id="step4" class="hidden">
+          <h2>Fecha de entrega</h2>
+          <input id="myDate" value="" type="date"  name="fecha"  required   data-step="4">
+        </section>
+
+        <section id="step5" class="hidden">
+          <h2>Tema</h2>
+          <input value="" type="text"  name="tema"   required   data-step="5">
+        </section>
+
+        <section id="step6" class="hidden">
+          <h2>Observacion</h2>
+          <p>Ingresa una observacion si es necesario, como por ejemplo si se debe considerar algunos aspectos importantes u otras cosas.</p>
+          <input value="" type="text-area"  name="observacion"  required   data-step="6">
+        </section>
+
+        <section id="step5" class="hidden">
+          <h2 class="mas-chico">Nombre y Apellido</h2>
+          <input value="" type="text"  name="nombre"   required   data-step="7">
+        </section>
+
+        <section id="step5" class="hidden">
+          <h2 class="mas-chico">Cupon de descuento</h2>
+          <p>Si tienes un cupon de descuento ingresa el cupon, si no lo tienes deja el campo vacio</p>
+          <input value="" type="text" class="cupon" name="cupon" placeholder=""   required   data-step="8">
+        </section>
+ 
+        <!-- Agrega más secciones para los otros pasos aquí -->
+
+        <section id="step-last" class="hidden last">
+          <h2>Presupuesto</h2>
+          <p id="presupuesto-base">Presupuesto base</p>
+          <div>
+            <p class="precio"></p>
+            <p class="text-cupon hidden"></p>
+            <p class="precio precio-sin-cupon hidden"></p>
+          </div>
+          <p class="confirm">Confirmalo por whatsapp 👇</p>
+            <button class="wha" type="submit">
+              <i class="fa fa-whatsapp wha-icon"></i>
+            </button>    
+        </section>
+
+        <div id="buttons">
+          <button type="button" id="prev-button" class="hidden">Atrás</button>
+          <button type="button" id="next-button" >Siguiente</button>
+        </div>
+      </form>
     </main>
+
+    <footer>
+      <p>Karen Trabajos Copyright © 2023</p>
+    </footer>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

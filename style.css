@@ -1,79 +1,193 @@
-html{
-    font-family: sans-serif;
-    font-size: 16px;
+:root{
+    --color: hsl(312, 55%, 71%);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.whatsapp-icon {
+    position: absolute;
+    bottom: -50%;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    background-color: #25D366; /* Color de fondo del botón de WhatsApp */
+    border-radius: 50%;
+    line-height: 60px;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+
+    /* Agregar estilos para centrar verticalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wha {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: #25D366;  
+}
+
+.precio {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.precio::before {
+    content: "Gs. ";
+}
+
+
+.wha-icon{
+    color: white;
+    font-size: 36px;
+}
+
+.last {
+    position: relative;
 }
 
 body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
     height: 100vh;
+}
+
+header {
+    background-color: var(--color);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+p {
+    text-align: center;
+}
+
+form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+select {
+    height: 60px;
+    font-size: 2rem;
+}
+
+input {
+    height: 60px;
+    font-size: 2rem;
+    width: 90%;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: 70%;
+}
+
+.hidden {
+    display: none;
+}
+
+section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #111927;
-    background-image: 
-        radial-gradient(at 47% 33%, hsl(310.75, 77%, 40%) 0, transparent 59%), 
-        radial-gradient(at 82% 65%, hsl(218.00, 39%, 11%) 0, transparent 55%);
 }
 
-
-.title {
-    text-align: center;
-    font-family: cursive;
-}
-
-main {
-    width: 80%;
-    margin-top: 10%;
-}
-
-.presupuesto-form {
-    height: 100%;
+#buttons {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.presupuesto-form  * {
-    margin-bottom: 4%;
-    margin-left: 2%;
-    margin-right: 2%;
-    display: block;
-}
 
-.presupuesto-form .label {
-    margin-bottom: 1%;
-}
-
-.presupuesto-form select,
-.presupuesto-form input
-{
-    height: 35px;
-}
-
-.label {
-    font-size: 1.1rem;
-    font-family: cursive;
-}
-
-.total {
-    margin: 0 2%;
-}
-
-.materia option{
-    width: 35px;
-}
-
-.article {
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-}
-
-input[type='submit'] {
-    background-color: #111927;
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
+
+button.hidden {
+    display: none;
+}
+
+.cupon {
+    text-transform: uppercase;
+}
+
+.precio-sin-cupon{
+    color: red;
+    text-decoration: line-through;
+    margin: 0;
+}
+
+
+.text-cupon {
+    font-size: 0.5rem;
+}
+
+.text-cupon::before{
+    content: "Cupon aplicado: ";
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--color);;
+    color: #fff;
+    flex-shrink: 0;
+    height: 15%;
+} 
+
+@media screen and (max-width: 768px) {
+
+
+
+    h1{
+        font-size: 2.1rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    h2.mas-chico {
+        font-size: 2.3rem;
+    }
+} 
