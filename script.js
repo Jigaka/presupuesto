@@ -12,6 +12,18 @@ const cupones = {
 }
 
 
+/**
+ * Precio base de:
+ *  monografia: 3000
+ *  documento: 1500
+ * 
+ * - agregar pantalla de si quiere impresion
+ * - agregar pantalla de si quiere anillado
+ * - agregar pantalla de si quiere carpeta
+ * - agregar pantalla de si quiere presentacion en powerpoint del trabajo
+ * - todo los anterior solo mostrar si quiere un documento tipo word
+ */
+
 document.addEventListener("DOMContentLoaded", function () {
   var inputFecha = document.getElementById("myDate");
 
