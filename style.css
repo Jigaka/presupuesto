@@ -15,8 +15,8 @@ html {
 }
 
 .whatsapp-icon {
-    position: absolute;
-    bottom: -50%;
+    /* position: absolute;
+    bottom: -50%; */
     margin: 0 auto;
     width: 80px;
     height: 80px;
@@ -66,6 +66,8 @@ body {
     padding: 0;
     background-color: #f2f2f2;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -74,7 +76,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 15%;
+    padding: 20px;
 }
 
 h1 {
@@ -107,12 +109,11 @@ input {
 }
 
 main {
-    max-width: 600px;
     margin: 0 auto;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    height: 70%;
+    flex-grow: 1;
 }
 
 .hidden {
@@ -122,8 +123,9 @@ main {
 section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    height: 100%;
 }
 
 #buttons {
@@ -170,15 +172,12 @@ button.hidden {
 
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     background-color: var(--color);;
     color: #fff;
-    flex-shrink: 0;
-    height: 15%;
 } 
 
 @media screen and (max-width: 768px) {
-
 
     h2 {
         font-size: 3rem;
